@@ -1,0 +1,25 @@
+{
+  "name": "gryapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vips120/GRYAPI.git"
+  },
+  "author": "VIPUL",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vips120/GRYAPI/issues"
+  },
+  "homepage": "https://github.com/Vips120/GRYAPI#readme",
+  "dependencies": {
+    "@hapi/joi": "^16.1.7",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.9"
+  }
+}
