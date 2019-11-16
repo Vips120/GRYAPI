@@ -1,5 +1,7 @@
 let mongoose = require('mongoose');
 let Joi = require("@hapi/joi");
+let jwt = require("jsonwebtoken");
+let config = require("config");
 let userSchema = new mongoose.Schema({
     firstname: { type: String, minlength: 4, maxlength: 100, required: true },
     lastname: { type: String, minlength: 4, maxlength: 100, required: true },
@@ -10,6 +12,10 @@ let userSchema = new mongoose.Schema({
     }
 });
 
+userSchema.methods.UserInfo = function () {
+    let token = jwt.sign({ _id: this._id }, config.get("API"));
+    return token;
+} 
 let UserModel = mongoose.model("users", userSchema);
 function Validationerror(message) {
     let Schema = Joi.object({

@@ -19,7 +19,11 @@
   "dependencies": {
     "@hapi/joi": "^16.1.7",
     "bcryptjs": "^2.4.3",
+    "config": "^3.2.4",
     "express": "^4.17.1",
-    "mongoose": "^5.7.9"
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.9",
+    "swagger-jsdoc": "^3.4.0",
+    "swagger-ui-express": "^4.1.2"
   }
 }
