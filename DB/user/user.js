@@ -9,7 +9,10 @@ let userSchema = new mongoose.Schema({
     UserLogin: {
         email: { type: String, required: true, unique: true },
         password: { type: String, required: true, minlength: 5, maxlength: 250 }
-    }
+    },
+    resetPasswordToken: { type: String },
+    resetPasswordExpires: {type: Date}
+    
 });
 
 userSchema.methods.UserInfo = function () {
