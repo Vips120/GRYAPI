@@ -2,6 +2,7 @@ let express = require('express');
 let app = express();
 let cors = require("cors");
 let mongoose = require("mongoose");
+let session = require("express-session");
 let port = 3500;
 let user = require("./API/user/user");
 let auth = require("./API/user/auth/user.login");
@@ -12,7 +13,9 @@ let file = require("./API/user/fileupload");
 let config = require("config");
 app.use(express.json(1));
 app.use(cors());
-
+app.use(session({
+    secret:config.get("API")
+}))
 if (!config.get("API")) {
     console.log("ACCESS DENIED!");
     process.exit();

@@ -5,6 +5,17 @@ let User = require('../../DB/user/user');
 let jwt = require("jsonwebtoken");
 let config = require("config");
 let userMid = require("../middleware/user");
+//SESSION-COOKIES
+router.get("/user", async (req, res) => {
+    let usersession = req.session.username;
+    if (!usersession) {
+        usersession = "YOGESH PAWAR";
+        res.send(usersession)
+    } else {
+        res.send(usersession);
+    }
+});
+
 //loggedIn user
 router.get("/me", userMid, async (req, res) => {
     let user = await User.UserModel.findById(req.user._id).select(["-UserLogin.password","-firstname"]);
